@@ -1,0 +1,46 @@
+<div class="container py-5">
+  <h1>你想對誰說幹話？</h1>
+  <form method="POST" action="/">
+    <fieldset class="form-group target-items">
+      <div class="target-item">
+        <label class="target-image form-check-label" for="target-engineer">
+          <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg" alt="">
+        </label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="target" id="target-engineer" value="工程師" {{#is target '工程師'}}checked{{/is}}>
+          <label class="form-check-label" for="target-engineer">
+            工程師
+          </label>
+        </div>
+      </div>
+      <div class="target-item">
+        <label class="target-image form-check-label" for="target-designer">
+          <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg" alt="">
+        </label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="target" id="target-designer" value="設計師" {{#is target '設計師'}}checked{{/is}}>
+          <label class="form-check-label" for="target-designer">
+            設計師
+          </label>
+        </div>
+      </div>
+      <div class="target-item">
+        <label class="target-image form-check-label" for="target-entrepreneur">
+          <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg" alt="">
+        </label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="target" id="target-entrepreneur" value="創業家" {{#is target '創業家'}}checked{{/is}}>
+          <label class="form-check-label" for="target-entrepreneur">
+            創業家
+          </label>
+        </div>
+      </div>
+    </fieldset>
+    <div class="form-group row target-display">
+      <button id="rubbish-btn" type="submit" class="btn btn-primary">產生幹話</button>
+      {{#if rubbish}}
+        <h2 id="rubbish-area">{{rubbish}}</h2>
+      {{/if}}
+    </div>
+  </form>
+</div>
