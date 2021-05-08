@@ -21,7 +21,7 @@ app.use(express.static('public'))
 
 // 設定路由
 app.get('/', (req, res) => {
-  res.render('index', { targets: targetList.results })
+  res.render('index')
 })
 
 app.post('/', (req, res) => {
