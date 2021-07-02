@@ -7,11 +7,9 @@ const generatorRubbish = require('./rubbish_generator')
 const app = express()
 const port = 3000
 
-
-// 設定 handlebars 
+// 設定 handlebars
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
-
 
 // 設定 Body-Parser
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -27,7 +25,7 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
   const target = req.body.target
   const rubbish = generatorRubbish(target)
-  res.render('index', { rubbish,  target })
+  res.render('index', { rubbish, target })
 })
 
 app.listen(port, (req, res) => {
